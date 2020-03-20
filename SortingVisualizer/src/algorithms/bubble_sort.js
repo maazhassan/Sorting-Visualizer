@@ -1,5 +1,5 @@
 'use strict';
-import { randomArray } from "./bubble_sort"
+import { randomArray } from "../app.js";
 
 let a = randomArray(50, 5, 500);
 console.log(a);
