@@ -7,7 +7,7 @@ console.log(a);
 
 //Insertion sort algorithm
 const insertionSort = (arr) => {
-    let len = arr.length;
+    const len = arr.length;
     for (let i = 1; i < len; i++) {
         let j = i - 1;
         let temp = arr[i];

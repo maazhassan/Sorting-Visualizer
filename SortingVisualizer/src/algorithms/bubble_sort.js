@@ -7,7 +7,7 @@ console.log(a);
 
 //Bubble sort algorithm
 const bubbleSort = (arr) => {
-    let n = arr.length - 1;
+    const n = arr.length - 1;
 
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n-i; j++) {

@@ -7,7 +7,7 @@ console.log(a);
 
 //Selection sort algorithm
 const selectionSort = (arr) => {
-    let len = arr.length;
+    const len = arr.length;
     for (let i = 0; i < len; i++) {
         let min = i;
         for (let j = i + 1; j < len; j++) {
