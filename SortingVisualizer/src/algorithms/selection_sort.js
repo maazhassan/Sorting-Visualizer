@@ -1,10 +1,12 @@
 'use strict';
 import { randomArray } from "../app.js";
 
+//Generate array
 let a = randomArray(50, 5, 500);
 console.log(a);
 
-let selectionSort = (arr) => {
+//Selection sort algorithm
+const selectionSort = (arr) => {
     let len = arr.length;
     for (let i = 0; i < len; i++) {
         let min = i;

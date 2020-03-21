@@ -1,11 +1,12 @@
 'use strict';
 import { randomArray } from "../app.js";
 
+//Generate array
 let a = randomArray(50, 5, 500);
 console.log(a);
 
 //Bubble sort algorithm
-let bubbleSort = (arr) => {
+const bubbleSort = (arr) => {
     let n = arr.length - 1;
 
     for (let i = 0; i < n; i++) {
