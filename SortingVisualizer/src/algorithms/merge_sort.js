@@ -5,7 +5,7 @@ import { randomArray } from "../app.js";
 let a = randomArray(50, 5, 500);
 console.log(a);
 
-//Recursive
+//Recursive function
 function mergeSort(arr) {
     //Length of array
     const len = arr.length;
