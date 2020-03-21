@@ -1,7 +1,7 @@
 'use strict';
 
 //Generate a random number in a range
-let randomRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const randomRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 //Generate a random array
 export function randomArray(size, min, max) {
