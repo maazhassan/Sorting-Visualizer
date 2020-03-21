@@ -24,4 +24,6 @@ const selectionSort = (arr) => {
     return arr;
 }
 
+console.time("sort");
 console.log(selectionSort(a));
+console.timeEnd("sort");

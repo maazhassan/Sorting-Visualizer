@@ -21,4 +21,6 @@ const bubbleSort = (arr) => {
     return arr;
 }
 
+console.time("sort");
 console.log(bubbleSort(a));
+console.timeEnd("sort");

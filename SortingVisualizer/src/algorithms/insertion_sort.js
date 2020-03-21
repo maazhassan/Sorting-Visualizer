@@ -20,4 +20,6 @@ const insertionSort = (arr) => {
       return arr;
 }
 
+console.time("sort");
 console.log(insertionSort(a));
+console.timeEnd("sort");
