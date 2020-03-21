@@ -6,7 +6,7 @@ let a = randomArray(50, 5, 500);
 console.log(a);
 
 //Recursive function
-function quickSort(arr, start, end) {
+function quickSortL(arr, start, end) {
     //Base case
     if (start >= end) return;
 
@@ -14,8 +14,8 @@ function quickSort(arr, start, end) {
     let index = partition(arr, start, end);
 
     //Recursively quick sort both partitions with new pivot values
-    quickSort(arr, start, index - 1);
-    quickSort(arr, index + 1, end);
+    quickSortL(arr, start, index - 1);
+    quickSortL(arr, index + 1, end);
 
     //Return sorted array at the end
     return arr;
@@ -51,5 +51,5 @@ function swap(arr, a, b) {
 }
 
 console.time("sort");
-console.log(quickSort(a, 0, a.length - 1));
+console.log(quickSortL(a, 0, a.length - 1));
 console.timeEnd("sort");
