@@ -7,7 +7,7 @@ console.log(a);
 
 //Heap sort main function
 //Adapted from https://levelup.gitconnected.com/heapsort-for-javascript-newbies-598d25477d55
-function heapSort(arr){
+function heapSort(arr) {
     //Information about array
     let len = arr.length;
     //This formula always gives the index of the last parent
