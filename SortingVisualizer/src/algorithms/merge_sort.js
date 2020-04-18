@@ -1,12 +1,7 @@
 'use strict';
-import { randomArray } from "../app.js";
-
-//Generate array
-let a = randomArray(50, 5, 500);
-console.log(a);
 
 //Recursive function
-function mergeSort(arr) {
+export function mergeSort(arr) {
     //Length of array
     const len = arr.length;
 
@@ -46,7 +41,3 @@ function merge(left, right) {
     //Concatenate the last value (will be in EITHER right or left array)
     return resultArray.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
-
-console.time("sort");
-console.log(mergeSort(a));
-console.timeEnd("sort");

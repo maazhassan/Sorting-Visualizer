@@ -1,12 +1,7 @@
 'use strict';
-import { randomArray } from "../app.js";
-
-//Generate array
-let a = randomArray(50, 5, 500);
-console.log(a);
 
 //Recursive function
-function quickSortL(arr, start, end) {
+export function quickSortL(arr, start, end) {
     //Base case
     if (start >= end) return;
 
@@ -49,7 +44,3 @@ function swap(arr, a, b) {
     arr[a] = arr[b];
     arr[b] = temp;
 }
-
-console.time("sort");
-console.log(quickSortL(a, 0, a.length - 1));
-console.timeEnd("sort");

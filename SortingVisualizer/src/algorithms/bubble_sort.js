@@ -1,12 +1,7 @@
 'use strict';
-import { randomArray } from "../app.js";
-
-//Generate array
-let a = randomArray(50, 5, 500);
-console.log(a);
 
 //Bubble sort algorithm
-const bubbleSort = (arr) => {
+export const bubbleSort = (arr) => {
     const n = arr.length - 1;
 
     for (let i = 0; i < n; i++) {
@@ -20,7 +15,3 @@ const bubbleSort = (arr) => {
     }
     return arr;
 }
-
-console.time("sort");
-console.log(bubbleSort(a));
-console.timeEnd("sort");

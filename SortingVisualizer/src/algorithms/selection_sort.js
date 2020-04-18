@@ -1,12 +1,7 @@
 'use strict';
-import { randomArray } from "../app.js";
-
-//Generate array
-let a = randomArray(50, 5, 500);
-console.log(a);
 
 //Selection sort algorithm
-const selectionSort = (arr) => {
+export const selectionSort = (arr) => {
     const len = arr.length;
     for (let i = 0; i < len; i++) {
         let min = i;
@@ -24,6 +19,3 @@ const selectionSort = (arr) => {
     return arr;
 }
 
-console.time("sort");
-console.log(selectionSort(a));
-console.timeEnd("sort");

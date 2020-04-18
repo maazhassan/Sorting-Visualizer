@@ -1,0 +1,10 @@
+#svg-wrapper {
+    text-align: center;
+}
+
+#svg {
+    background-color: powderblue;
+    position: relative;
+    top: 150px;
+    display: inline-block;
+}

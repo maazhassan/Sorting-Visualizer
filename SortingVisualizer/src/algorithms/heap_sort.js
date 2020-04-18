@@ -1,13 +1,8 @@
 'use strict';
-import { randomArray } from "../app.js";
-
-//Generate array
-let a = randomArray(50, 5, 500);
-console.log(a);
 
 //Heap sort main function
 //Adapted from https://levelup.gitconnected.com/heapsort-for-javascript-newbies-598d25477d55
-function heapSort(arr) {
+export function heapSort(arr) {
     //Information about array
     let len = arr.length;
     //This formula always gives the index of the last parent
@@ -54,7 +49,3 @@ function heapify(arr, len, i) {
     }
     return arr;
 }
-
-console.time("sort");
-console.log(heapSort(a));
-console.timeEnd("sort");
