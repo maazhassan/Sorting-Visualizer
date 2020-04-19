@@ -23,7 +23,7 @@ function randomArray(size, min, max) {
 let svg = document.getElementById("rects");
 
 //Function that displays the rectangles for the array elements
-function displayArray(arr) {
+export function displayArray(arr) {
     let width = 500/arr.length;
     for (let i = 0; i < arr.length; i++) {
         let rec = document.createElementNS("http://www.w3.org/2000/svg", "rect");
@@ -38,11 +38,15 @@ function displayArray(arr) {
 }
 
 //Function to clear
-function clear() {
+export function clear() {
     let rectsList = svg.querySelectorAll("rect");
     rectsList.forEach(r => {
         svg.removeChild(r);
     });
+}
+
+export function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 //Initial array/draw
@@ -112,8 +116,14 @@ selectionSortButton.onclick = function() {
 }
 
 //Event handler for sort button
-sort.onclick = function() {
-    clear();
-    arr = (selectedAlgo === quickSortH || selectedAlgo === quickSortL) ? selectedAlgo(arr, 0, arr.length-1) : selectedAlgo(arr);
+sort.onclick = async function() {
+    //clear();
+    if (selectedAlgo === quickSortH || selectedAlgo === quickSortL) {
+        arr = selectedAlgo(arr, 0, arr.length-1);
+    }
+    else {
+        arr = await selectedAlgo(arr);
+    }
     displayArray(arr);
+    //console.log(arr);
 }
