@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Visualizer</title>
     <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
     <script src="jquery-3.5.0.js"></script>
     <script src="app.js" type="module"></script>
+</head>
+<body>
+    
+    <div class="slidecontainer">
+        <input type="range" min="5" max="100" value="50" id="myRange">
+    </div>
+
+    <div class="sort">
+        <button type="button" id="bubbleSort">Bubble Sort</button>
+        <button type="button" id="heapSort">Heap Sort</button>
+        <button type="button" id="insertionSort">Insertion Sort</button>
+        <button type="button" id="mergeSort">Merge Sort</button>
+        <button type="button" id="quickSortH">Quick Sort (Hoare)</button>
+        <button type="button" id="quickSortL">Quick Sort (Lomuto)</button>
+        <button type="button" id="selectionSort">Selection Sort</button>
+        <button type="button" id="sortButton">Sort!</button>
+    </div>
+
+    <div>
+        <p id="algo-name">Bubble Sort</p>
+    </div>
 
     <div id="svg-wrapper">
         <div id="svg">
-            <svg width="500" height="500">
-                <rect width="10" height="500" style="fill:rgb(0, 0, 0)"/>
-                <rect x="10" width="10" height="200" style="fill:rgb(0, 26, 255)"/>
+            <svg id="rects" width="500" height="500">
+                <!-- <rect width="10" height="500" style="fill:rgb(0, 0, 0)"/> -->
+                <!-- <rect x="10" width="10" height="200" style="fill:rgb(0, 26, 255)"/> -->
             </svg>
         </div>
     </div>  
