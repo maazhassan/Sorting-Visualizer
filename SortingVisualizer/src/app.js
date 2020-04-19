@@ -45,6 +45,7 @@ export function clear() {
     });
 }
 
+//Sleep function to cause delay
 export function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
