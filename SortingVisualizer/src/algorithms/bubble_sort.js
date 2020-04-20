@@ -5,8 +5,12 @@ import {displayArray, clear, sleep} from "../app.js";
 export async function bubbleSort(arr) {
     const n = arr.length - 1;
     const delay = 4 + (1.35**(-(n-25)));
+    let swap;
+    let i = -1;
 
-    for (let i = 0; i < n; i++) {
+    do {
+        swap = false;
+        i++;
         for (let j = 0; j < n-i; j++) {
             arr[j][1] = "green";
             arr[j+1][1] = "green";
@@ -16,6 +20,8 @@ export async function bubbleSort(arr) {
             await sleep(delay);
 
             if (arr[j][0] > arr[j+1][0]) {
+                swap = true;
+
                 arr[j][1] = "red";
                 arr[j+1][1] = "red";
 
@@ -43,6 +49,8 @@ export async function bubbleSort(arr) {
         }
         arr[n-i][1] = "purple";
     }
+    while (swap);
+
     clear();
     return arr;
 }
