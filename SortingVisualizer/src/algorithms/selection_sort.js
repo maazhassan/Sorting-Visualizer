@@ -5,10 +5,10 @@ import {displayArray, clear, sleep} from "../app.js";
 export async function selectionSort(arr) {
     const len = arr.length;
     const delay = 4 + (1.2**(-(arr.length-40)));
-    // const delay = 3000;
 
     for (let i = 0; i < len; i++) {
         let min = i;
+        let sorted = true;
 
         arr[i][1] = "green";
         clear();
@@ -16,6 +16,8 @@ export async function selectionSort(arr) {
         await sleep(delay);
 
         for (let j = i + 1; j < len; j++) {
+            if (arr[j][0] < arr[j-1][0]) sorted = false;
+
             arr[j][1] = "red";
             clear();
             displayArray(arr);
@@ -33,6 +35,8 @@ export async function selectionSort(arr) {
                 arr[j][1] = "gray";
             }
         }
+
+        if (sorted) break;
 
         if (min !== i) {
             let temp = arr[i];
