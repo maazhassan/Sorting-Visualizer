@@ -143,7 +143,7 @@ sort.onclick = async function() {
     await sleep(750);
 
     for (let i = 0; i < arr.length; i++) {
-        arr[i][1] = "purple";
+        arr[i][1] = "gray";
     }
 
     clear();

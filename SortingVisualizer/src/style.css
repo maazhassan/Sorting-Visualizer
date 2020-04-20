@@ -1,5 +1,5 @@
 html {
-    /*background-color: rgb(58, 58, 58);*/
+    background-color: rgb(251, 252, 255);
 }
 
 #svg-wrapper {
@@ -21,8 +21,8 @@ html {
     fill: rgb(187, 29, 29)
 }
 
-.purple {
-    fill: rgb(175, 99, 175)
+.lightblue {
+    fill: rgb(31, 122, 140)
 }
 
 .green {

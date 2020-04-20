@@ -47,7 +47,7 @@ export async function bubbleSort(arr) {
             arr[j][1] = "gray";
             arr[j+1][1] = "gray";
         }
-        arr[n-i][1] = "purple";
+        arr[n-i][1] = "lightblue";
     }
     while (swap);
 
