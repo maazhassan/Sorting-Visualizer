@@ -27,8 +27,10 @@ let svg = document.getElementById("rects");
 
 //Function that displays the rectangles for the array elements
 export function displayArray(arr) {
-    let gap = 1.045**(-(arr.length-50)) + 2;
-    let width = (1000/arr.length) - gap;
+    let gap = 1.04**(-(arr.length-50)) + 2;
+    let maxWidth = (40/19)*arr.length + (15000/19);
+    svg.setAttribute("width", maxWidth - gap);
+    let width = (maxWidth/arr.length) - gap;
     for (let i = 0; i < arr.length; i++) {
         let rec = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         rec.setAttribute("x", i*(width + gap))
