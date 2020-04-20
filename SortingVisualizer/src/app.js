@@ -122,6 +122,10 @@ selectionSortButton.onclick = function() {
 
 //Event handler for sort button
 sort.onclick = async function() {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i][1] = "gray";
+    }
+
     if (selectedAlgo === quickSortH || selectedAlgo === quickSortL) {
         arr = selectedAlgo(arr, 0, arr.length-1);
     }
@@ -139,6 +143,7 @@ sort.onclick = async function() {
     for (let i = 0; i < arr.length; i++) {
         arr[i][1] = "purple";
     }
+
     clear();
     displayArray(arr);
 }
