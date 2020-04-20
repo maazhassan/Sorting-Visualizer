@@ -8,3 +8,19 @@
     top: 150px;
     display: inline-block;
 }
+
+.gray {
+    fill: rgb(150, 145, 143);
+}
+
+.red {
+    fill: rgb(187, 29, 29)
+}
+
+.purple {
+    fill: rgb(175, 99, 175)
+}
+
+.green {
+    fill: rgb(103, 192, 106)
+}

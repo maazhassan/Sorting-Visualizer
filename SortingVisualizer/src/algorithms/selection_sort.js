@@ -1,7 +1,5 @@
 'use strict';
-import {displayArray} from "../app.js";
-import {clear} from "../app.js";
-import {sleep} from "../app.js";
+import {displayArray, clear, sleep} from "../app.js";
 
 //Selection sort algorithm
 export async function selectionSort(arr) {

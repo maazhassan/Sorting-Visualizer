@@ -14,7 +14,10 @@ const randomRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + 
 function randomArray(size, min, max) {
     let array = [];
     for (let i = 0; i < size; i++) {
-        array.push(randomRange(min, max));
+        let innerArray = [];
+        innerArray.push(randomRange(min, max));
+        innerArray.push("gray");
+        array.push(innerArray);
     }
     return array;
 }
@@ -29,10 +32,11 @@ export function displayArray(arr) {
         let rec = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         rec.setAttribute("x", i*width)
         rec.setAttribute("width", width);
-        rec.setAttribute("height", arr[i]);
-        rec.setAttribute("style", "fill:rgb(0, 0, 0)");
+        rec.setAttribute("height", arr[i][0]);
+        //rec.setAttribute("fill", "rgb(133, 129, 127)");
         rec.setAttribute("stroke-width", "0.3");
         rec.setAttribute("stroke", "white");
+        rec.setAttribute("class", arr[i][1]);
         svg.appendChild(rec);
     }
 }
@@ -118,13 +122,23 @@ selectionSortButton.onclick = function() {
 
 //Event handler for sort button
 sort.onclick = async function() {
-    //clear();
     if (selectedAlgo === quickSortH || selectedAlgo === quickSortL) {
         arr = selectedAlgo(arr, 0, arr.length-1);
     }
     else {
         arr = await selectedAlgo(arr);
     }
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i][1] = "green";
+    }
+
     displayArray(arr);
-    //console.log(arr);
+    await sleep(750);
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i][1] = "purple";
+    }
+    clear();
+    displayArray(arr);
 }
