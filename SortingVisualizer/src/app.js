@@ -27,13 +27,13 @@ let svg = document.getElementById("rects");
 
 //Function that displays the rectangles for the array elements
 export function displayArray(arr) {
-    let width = 500/arr.length;
+    let gap = 1.045**(-(arr.length-50)) + 2;
+    let width = (1000/arr.length) - gap;
     for (let i = 0; i < arr.length; i++) {
         let rec = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rec.setAttribute("x", i*width)
+        rec.setAttribute("x", i*(width + gap))
         rec.setAttribute("width", width);
         rec.setAttribute("height", arr[i][0]);
-        //rec.setAttribute("fill", "rgb(133, 129, 127)");
         rec.setAttribute("stroke-width", "0.3");
         rec.setAttribute("stroke", "white");
         rec.setAttribute("class", arr[i][1]);
@@ -55,7 +55,7 @@ export function sleep(ms) {
 }
 
 //Initial array/draw
-let arr = randomArray(50, 5, 500);
+let arr = randomArray(50, 5, 600);
 displayArray(arr);
 
 //Slider element in index.html
@@ -65,7 +65,7 @@ slider.step = "5";
 //Updating rects when slider moves
 slider.oninput = function() {
     clear();
-    arr = randomArray(this.value, 5, 500);
+    arr = randomArray(this.value, 5, 600);
     displayArray(arr);
 }
 

@@ -4,8 +4,7 @@ import {displayArray, clear, sleep} from "../app.js";
 //Insertion sort algorithm
 export async function insertionSort(arr) {
     const len = arr.length;
-    const delay = 10 + (1.35**(-(len-26)));
-    //const delay = 1000;
+    const delay = 4 + (1.2**(-(arr.length-40)));
 
     for (let i = 1; i < len; i++) {
         arr[i][1] = "green";
