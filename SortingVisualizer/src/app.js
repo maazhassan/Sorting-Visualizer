@@ -129,7 +129,7 @@ sort.onclick = async function() {
     }
 
     if (selectedAlgo === quickSortH || selectedAlgo === quickSortL) {
-        arr = selectedAlgo(arr, 0, arr.length-1);
+        arr = await selectedAlgo(arr, 0, arr.length-1, arr.length);
     }
     else {
         arr = await selectedAlgo(arr);
@@ -143,7 +143,7 @@ sort.onclick = async function() {
     await sleep(750);
 
     for (let i = 0; i < arr.length; i++) {
-        arr[i][1] = "gray";
+        arr[i][1] = "lightblue";
     }
 
     clear();

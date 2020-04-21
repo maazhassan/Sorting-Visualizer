@@ -28,3 +28,7 @@ html {
 .green {
     fill: rgb(103, 192, 106)
 }
+
+.yellow {
+    fill: rgb(252, 225, 86);
+}
