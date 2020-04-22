@@ -12,6 +12,7 @@ export async function quickSortL(arr, start, end, ogLen) {
         }
         return;
     }
+    
     //Partition the array and return index of pivot value
     let index = await partition(arr, start, end, delay);
 
