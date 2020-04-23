@@ -38,7 +38,8 @@ async function mergeSort(arr, ogArr) {
 
 //Merge function
 async function merge(left, right, ogArr) {
-    const delay = 4;
+    const delay = 4 + (1.2**(-(ogArr.length-40)));
+    const ogMid = Math.floor(ogArr.length/2)
 
     //Variables
     let resultArray = [], leftIndex = 0, rightIndex = 0;
@@ -54,9 +55,8 @@ async function merge(left, right, ogArr) {
         if (left[leftIndex][0] < right[rightIndex][0]) {
             resultArray.push(left[leftIndex]);
 
-            //let newIndex = left[leftIndex][1] - (leftIndex - left.length);
-
-            ogArr[left[leftIndex][1]][1] = "gray";
+            if (left.length == ogMid) ogArr[left[leftIndex][1]][1] = "lightblue";
+            else ogArr[left[leftIndex][1]][1] = "gray";
             ogArr[right[rightIndex][1]][1] = "gray";
 
             leftIndex++; // move left array cursor
@@ -89,7 +89,8 @@ async function merge(left, right, ogArr) {
             await sleep(delay);
 
             ogArr[left[leftIndex][1]][1] = "gray";
-            ogArr[right[rightIndex][1]][1] = "gray";
+            if (left.length == ogMid) ogArr[right[rightIndex][1]][1] = "lightblue";
+            else ogArr[right[rightIndex][1]][1] = "gray";
 
             rightIndex++; // move right array cursor
         }
