@@ -2,7 +2,7 @@
 import {bubbleSort} from "./algorithms/bubble_sort.js";
 import {heapSort} from "./algorithms/heap_sort.js";
 import {insertionSort} from "./algorithms/insertion_sort.js";
-import {mergeSort} from "./algorithms/merge_sort.js";
+import {mergeSortInit} from "./algorithms/merge_sort.js";
 import {quickSortH} from "./algorithms/quick_sort_hoare.js";
 import {quickSortL} from "./algorithms/quick_sort_lomuto.js";
 import {selectionSort} from "./algorithms/selection_sort.js";
@@ -103,7 +103,7 @@ insertionSortButton.onclick = function() {
 }
 
 mergeSortButton.onclick = function() {
-    selectedAlgo = mergeSort;
+    selectedAlgo = mergeSortInit;
     label.innerHTML = "Merge Sort";
 }
 
@@ -128,12 +128,11 @@ sort.onclick = async function() {
         arr[i][1] = "gray";
     }
 
-    if (selectedAlgo === quickSortH || selectedAlgo === quickSortL) {
-        arr = await selectedAlgo(arr, 0, arr.length-1, arr.length);
+    if ([quickSortL, quickSortH].includes(selectedAlgo)) {
+        arr = await selectedAlgo(arr, 0, arr.length-1);
     }
-    else {
-        arr = await selectedAlgo(arr);
-    }
+    // else if (selectedAlgo == mergeSortInit) arr = await selectedAlgo(arr, arr);
+    else arr = await selectedAlgo(arr);
 
     for (let i = 0; i < arr.length; i++) {
         arr[i][1] = "green";

@@ -2,8 +2,8 @@
 import {displayArray, clear, sleep} from "../app.js";
 
 //Recursive function
-export async function quickSortH(arr, start, end, ogLen) {
-    const delay = 10 + (1.2**(-(ogLen-40)));
+export async function quickSortH(arr, start, end) {
+    const delay = 4 + (1.2**(-(arr.length-40)));
 
     //Base case
     if (start >= end) {
@@ -17,8 +17,8 @@ export async function quickSortH(arr, start, end, ogLen) {
     let index = await partition(arr, start, end, delay);
 
     //Recursively quick sort both partitions with new pivot values
-    await quickSortH(arr, start, index, ogLen);
-    await quickSortH(arr, index + 1, end, ogLen);
+    await quickSortH(arr, start, index);
+    await quickSortH(arr, index + 1, end);
 
     //Return sorted array at the end
     clear();

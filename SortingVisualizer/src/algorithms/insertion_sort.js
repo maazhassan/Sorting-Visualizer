@@ -41,12 +41,13 @@ export async function insertionSort(arr) {
                 displayArray(arr);
                 await sleep(delay);
 
-                arr[j][1] = "gray";
+                arr[j][1] = "lightblue";
                 j--;
             }
-            arr[j][1] = "gray";
+            arr[j][1] = "lightblue";
         }
-        arr[i][1] = "gray";
+        arr[i][1] = "lightblue";
+        arr[i-1][1] = "lightblue";
     }
     clear();
     return arr;
