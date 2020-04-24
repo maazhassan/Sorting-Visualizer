@@ -135,6 +135,9 @@ selectionSortButton.onclick = function() {
 //Event handler for sort button
 sort.onclick = async function() {
     if (selectedAlgo != null) {
+        slider.disabled = true;
+        sort.disabled = true;
+
         for (let i = 0; i < arr.length; i++) {
             arr[i][1] = "gray";
         }
@@ -157,5 +160,8 @@ sort.onclick = async function() {
     
         clear();
         displayArray(arr);
+
+        slider.disabled = false;
+        sort.disabled = false;
     }
 }
