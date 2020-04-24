@@ -2,6 +2,11 @@ html {
     background-color: rgb(251, 252, 255);
 }
 
+#toolbar {
+    display: inline-block;
+    /* background-color: rgb(2,43,58); */
+}
+
 #svg-wrapper {
     text-align: center;
 }
@@ -11,6 +16,17 @@ html {
     position: relative;
     top: 150px;
     display: inline-block;
+}
+
+#arraySize {
+    cursor: pointer;
+}
+
+#sortButton {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    visibility: hidden;
 }
 
 .gray {
@@ -31,4 +47,28 @@ html {
 
 .yellow {
     fill: rgb(252, 225, 86);
+}
+
+.algoButton {
+    color: black;
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.algoButton:hover {
+    color: rgb(253, 0, 0);
+}
+
+.selectedAlgoButton {
+    color: rgb(230, 72, 230);
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: auto;
 }

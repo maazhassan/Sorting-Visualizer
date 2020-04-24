@@ -61,7 +61,7 @@ let arr = randomArray(50, 5, 600);
 displayArray(arr);
 
 //Slider element in index.html
-let slider = document.getElementById("myRange");
+let slider = document.getElementById("arraySize");
 slider.step = "5";
 
 //Updating rects when slider moves
@@ -81,70 +81,81 @@ let quickSortLButton = document.getElementById("quickSortL");
 let selectionSortButton = document.getElementById("selectionSort");
 let sort = document.getElementById("sortButton");
 
-let label = document.getElementById("algo-name");
+let selectedAlgo = null;
 
-//Default algorithm
-let selectedAlgo = bubbleSort; 
+function unselectPrev(newSelect) {
+    let prevSelected = document.getElementsByClassName("selectedAlgoButton");
+    if (prevSelected.length > 0) prevSelected[0].setAttribute("class", "algoButton");
+    newSelect.setAttribute("class", "selectedAlgoButton");
+}
 
 //Event handlers for algorithm buttons
 bubbleSortButton.onclick = function() {
     selectedAlgo = bubbleSort;
-    label.innerHTML = "Bubble Sort";
+    unselectPrev(bubbleSortButton);
+    sort.style.visibility = "visible";
 }
 
 heapSortButton.onclick = function() {
     selectedAlgo = heapSort;
-    label.innerHTML = "Heap Sort";
+    unselectPrev(heapSortButton);
+    sort.style.visibility = "visible";
 }
 
 insertionSortButton.onclick = function() {
     selectedAlgo = insertionSort;
-    label.innerHTML = "Insertion Sort";
+    unselectPrev(insertionSortButton);
+    sort.style.visibility = "visible";
 }
 
 mergeSortButton.onclick = function() {
     selectedAlgo = mergeSortInit;
-    label.innerHTML = "Merge Sort";
+    unselectPrev(mergeSortButton);
+    sort.style.visibility = "visible";
 }
 
 quickSortHButton.onclick = function() {
     selectedAlgo = quickSortH;
-    label.innerHTML = "Quick Sort (Hoare)";
+    unselectPrev(quickSortHButton);
+    sort.style.visibility = "visible";
 }
 
 quickSortLButton.onclick = function() {
     selectedAlgo = quickSortL;
-    label.innerHTML = "Quick Sort (Lomuto)";
+    unselectPrev(quickSortLButton);
+    sort.style.visibility = "visible";
 }
 
 selectionSortButton.onclick = function() {
     selectedAlgo = selectionSort;
-    label.innerHTML = "Selection Sort";
+    unselectPrev(selectionSortButton);
+    sort.style.visibility = "visible";
 }
 
 //Event handler for sort button
 sort.onclick = async function() {
-    for (let i = 0; i < arr.length; i++) {
-        arr[i][1] = "gray";
+    if (selectedAlgo != null) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i][1] = "gray";
+        }
+    
+        if ([quickSortL, quickSortH].includes(selectedAlgo)) {
+            arr = await selectedAlgo(arr, 0, arr.length-1);
+        }
+        else arr = await selectedAlgo(arr);
+    
+        for (let i = 0; i < arr.length; i++) {
+            arr[i][1] = "green";
+        }
+    
+        displayArray(arr);
+        await sleep(750);
+    
+        for (let i = 0; i < arr.length; i++) {
+            arr[i][1] = "lightblue";
+        }
+    
+        clear();
+        displayArray(arr);
     }
-
-    if ([quickSortL, quickSortH].includes(selectedAlgo)) {
-        arr = await selectedAlgo(arr, 0, arr.length-1);
-    }
-    // else if (selectedAlgo == mergeSortInit) arr = await selectedAlgo(arr, arr);
-    else arr = await selectedAlgo(arr);
-
-    for (let i = 0; i < arr.length; i++) {
-        arr[i][1] = "green";
-    }
-
-    displayArray(arr);
-    await sleep(750);
-
-    for (let i = 0; i < arr.length; i++) {
-        arr[i][1] = "lightblue";
-    }
-
-    clear();
-    displayArray(arr);
 }

@@ -9,32 +9,22 @@
     <script src="app.js" type="module"></script>
 </head>
 <body>
-    
-    <div class="slidecontainer">
-        <input type="range" min="5" max="100" value="50" id="myRange">
-    </div>
+    <div id="toolbar">
+        <input type="range" min="5" max="100" value="50" id="arraySize">
 
-    <div class="sort">
-        <button type="button" id="bubbleSort">Bubble Sort</button>
-        <button type="button" id="heapSort">Heap Sort</button>
-        <button type="button" id="insertionSort">Insertion Sort</button>
-        <button type="button" id="mergeSort">Merge Sort</button>
-        <button type="button" id="quickSortH">Quick Sort (Hoare)</button>
-        <button type="button" id="quickSortL">Quick Sort (Lomuto)</button>
-        <button type="button" id="selectionSort">Selection Sort</button>
+        <button type="button" class ="algoButton" id="bubbleSort">Bubble Sort</button>
+        <button type="button" class ="algoButton" id="selectionSort">Selection Sort</button>
+        <button type="button" class ="algoButton" id="insertionSort">Insertion Sort</button>
+        <button type="button" class ="algoButton" id="heapSort">Heap Sort</button>
+        <button type="button" class ="algoButton" id="quickSortL">Quick Sort (Lomuto)</button>
+        <button type="button" class ="algoButton" id="quickSortH">Quick Sort (Hoare)</button>
+        <button type="button" class ="algoButton" id="mergeSort">Merge Sort</button>
         <button type="button" id="sortButton">Sort!</button>
     </div>
-
-    <div>
-        <p id="algo-name">Bubble Sort</p>
-    </div>
-
+    
     <div id="svg-wrapper">
         <div id="svg">
-            <svg id="rects" width="1000" height="600">
-                <!-- <rect width="10" height="500" style="fill:rgb(0, 0, 0)"/> -->
-                <!-- <rect x="10" width="10" height="200" style="fill:rgb(0, 26, 255)"/> -->
-            </svg>
+            <svg id="rects" width="1000" height="600"></svg>
         </div>
     </div>  
 </body>
