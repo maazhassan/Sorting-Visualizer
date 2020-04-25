@@ -2,9 +2,83 @@ html {
     background-color: rgb(251, 252, 255);
 }
 
+body {
+    margin: 0;
+}
+
+* {
+    font-size: 12px;
+    font-family: OCR A Std;
+}
+
 #toolbar {
-    display: inline-block;
-    /* background-color: rgb(2,43,58); */
+    height: 150px;
+    line-height: 150px;
+    background-color: rgb(50, 101, 119);
+}
+
+#newArrayButton {
+    color: white;
+    background: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none; 
+    outline: none;
+    cursor: pointer; 
+}
+
+#newArrayButton:disabled {
+    color: rgb(151, 0, 0);
+    cursor: auto;
+}
+
+#newArrayButton:hover:enabled {
+    color: rgb(166, 167, 170);
+}
+
+#arraySize {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+
+#arraySize:disabled {
+    cursor: auto;
+    background: rgb(151, 0, 0);
+}
+
+#arraySize::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%; 
+    background: rgb(166, 167, 170);
+    cursor: pointer;
+  }
+
+#sortButton {
+    color: white;
+    background: none;
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer; 
+    visibility: hidden;
+}
+
+#sortButton:disabled {
+    color: rgb(151, 0, 0);
+    cursor: auto;
+}
+
+#sortButton:hover:enabled {
+    color: rgb(166, 167, 170);
 }
 
 #svg-wrapper {
@@ -14,19 +88,8 @@ html {
 #svg {
     /* background-color: powderblue; */
     position: relative;
-    top: 150px;
+    top: 115px;
     display: inline-block;
-}
-
-#arraySize {
-    cursor: pointer;
-}
-
-#sortButton {
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-    visibility: hidden;
 }
 
 .gray {
@@ -50,25 +113,25 @@ html {
 }
 
 .algoButton {
-    color: black;
+    color: white;
     background: none;
     border: none;
     outline: none;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
 .algoButton:hover {
-    color: rgb(253, 0, 0);
+    color: rgb(166, 167, 170);
 }
 
 .selectedAlgoButton {
-    color: rgb(230, 72, 230);
+    color: rgb(103, 192, 106);
     background: none;
     border: none;
     outline: none;
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
 }

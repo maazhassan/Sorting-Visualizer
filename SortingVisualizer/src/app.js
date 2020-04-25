@@ -62,16 +62,17 @@ displayArray(arr);
 
 //Slider element in index.html
 let slider = document.getElementById("arraySize");
-slider.step = "5";
+slider.step = "1";
 
 //Updating rects when slider moves
 slider.oninput = function() {
-    clear();
     arr = randomArray(this.value, 5, 600);
+    clear();
     displayArray(arr);
 }
 
 //Button elements from index.html
+let newArray = document.getElementById("newArrayButton");
 let bubbleSortButton = document.getElementById("bubbleSort");
 let heapSortButton = document.getElementById("heapSort");
 let insertionSortButton = document.getElementById("insertionSort");
@@ -87,6 +88,13 @@ function unselectPrev(newSelect) {
     let prevSelected = document.getElementsByClassName("selectedAlgoButton");
     if (prevSelected.length > 0) prevSelected[0].setAttribute("class", "algoButton");
     newSelect.setAttribute("class", "selectedAlgoButton");
+}
+
+//Event handler for new array button
+newArray.onclick = function() {
+    arr = randomArray(slider.value, 5, 600);
+    clear();
+    displayArray(arr);
 }
 
 //Event handlers for algorithm buttons
@@ -137,6 +145,7 @@ sort.onclick = async function() {
     if (selectedAlgo != null) {
         slider.disabled = true;
         sort.disabled = true;
+        newArray.disabled = true;
 
         for (let i = 0; i < arr.length; i++) {
             arr[i][1] = "gray";
@@ -163,5 +172,6 @@ sort.onclick = async function() {
 
         slider.disabled = false;
         sort.disabled = false;
+        newArray.disabled = false;
     }
 }
