@@ -9,11 +9,12 @@ body {
 * {
     font-size: 12px;
     font-family: OCR A Std;
+    -webkit-user-select: none;
 }
 
 #toolbar {
     height: 150px;
-    line-height: 150px;
+    line-height: 170px;
     background-color: rgb(50, 101, 119);
 }
 
@@ -34,6 +35,17 @@ body {
 
 #newArrayButton:hover:enabled {
     color: rgb(166, 167, 170);
+}
+
+#sliderlabel {
+    margin-left: 20px;
+    margin-right: 5px;
+    display: inline;
+    color: white
+}
+
+#sliderlabel:disabled {
+    color: rgb(151, 0, 0);
 }
 
 #arraySize {
@@ -58,9 +70,16 @@ body {
     width: 17px;
     height: 17px;
     border-radius: 50%; 
-    background: rgb(166, 167, 170);
-    cursor: pointer;
-  }
+    background: rgb(2,43,58);
+}
+
+#upperrow {
+    display: inline-block;
+}
+
+#lowerrow {
+    display: inline-block;
+}
 
 #sortButton {
     color: white;
@@ -86,9 +105,8 @@ body {
 }
 
 #svg {
-    /* background-color: powderblue; */
     position: relative;
-    top: 115px;
+    top: 100px;
     display: inline-block;
 }
 
