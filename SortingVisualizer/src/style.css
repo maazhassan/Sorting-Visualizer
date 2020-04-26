@@ -13,8 +13,9 @@ body {
 }
 
 #toolbar {
+    display: flex;
+    align-items: center;
     height: 150px;
-    line-height: 170px;
     background-color: rgb(50, 101, 119);
 }
 
@@ -73,12 +74,20 @@ body {
     background: rgb(2,43,58);
 }
 
+#algocontainer {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+}
+
 #upperrow {
     display: inline-block;
 }
 
 #lowerrow {
-    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 35px;
 }
 
 #sortButton {
