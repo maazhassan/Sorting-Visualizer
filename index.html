@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=https://maazhassan.github.io/Sorting-Visualizer/SortingVisualizer/src/index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="app.js" type="module"></script>
 </head>
 <body>
+    <div id="toolbar">
+        <button type="button" id="newArrayButton">Generate New Array</button>
+
+        <div class="divider"></div>
+
+        <p id="sliderlabel">Array Size:</p>
+        <input type="range" min="5" max="100" value="52" id="arraySize">
+
+        <div class="divider"></div>
+
+        <div id="algocontainer">
+            <div id="upperrow">
+                <button type="button" class="algoButton" id="bubbleSort">Bubble Sort</button>
+                <button type="button" class="algoButton" id="selectionSort">Selection Sort</button>
+                <button type="button" class="algoButton" id="insertionSort">Insertion Sort</button>
+                <button type="button" class="algoButton" id="heapSort">Heap Sort</button>
+            </div>
+            <div id="lowerrow">
+                <button type="button" class="algoButton" id="quickSortL">Quick Sort (Lomuto)</button>
+                <button type="button" class="algoButton" id="quickSortH">Quick Sort (Hoare)</button>
+                <button type="button" class="algoButton" id="mergeSort">Merge Sort</button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <button type="button" id="sortButton">Sort!</button>
+    </div>
     
+    <div id="svg-wrapper">
+        <div id="svg">
+            <svg id="rects" width="1000" height="600"></svg>
+        </div>
+    </div>  
 </body>
 </html>
