@@ -1,0 +1,1 @@
+This is an application that can be used to visualize different sorting algorithms in real time. Moving the slider will change the size of the array as well as change the speed - bigger arrays sort faster. Make sure you are using Google Chrome, and then click [here](https://maazhassan.github.io/Sorting-Visualizer/) to access the application.
