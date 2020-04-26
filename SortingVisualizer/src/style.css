@@ -1,14 +1,19 @@
 html {
     background-color: rgb(251, 252, 255);
+    font-size: 16px;
 }
 
 body {
     margin: 0;
 }
 
+button {
+    font-size: 0.75rem;
+}
+
 * {
-    font-size: 12px;
-    font-family: OCR A Std;
+    font-size: 0.75rem;
+    font-family: "OCR A Std", "Courier New", Courier, monospace;
     -webkit-user-select: none;
 }
 
