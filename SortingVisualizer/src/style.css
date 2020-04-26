@@ -115,12 +115,13 @@ button {
 }
 
 #svg-wrapper {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 84vh;
 }
 
 #svg {
-    position: relative;
-    top: 100px;
     display: inline-block;
 }
 
