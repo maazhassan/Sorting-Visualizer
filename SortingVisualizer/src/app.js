@@ -144,6 +144,7 @@ selectionSortButton.onclick = function() {
 sort.onclick = async function() {
     if (selectedAlgo != null) {
         slider.disabled = true;
+        document.getElementById("sliderlabel").style.color = "rgb(151, 0, 0)";
         sort.disabled = true;
         newArray.disabled = true;
 
@@ -171,6 +172,7 @@ sort.onclick = async function() {
         displayArray(arr);
 
         slider.disabled = false;
+        document.getElementById("sliderlabel").style.color = "white";
         sort.disabled = false;
         newArray.disabled = false;
     }

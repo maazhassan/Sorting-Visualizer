@@ -119,6 +119,16 @@ body {
     display: inline-block;
 }
 
+.divider {
+    display:inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 70%;
+    width: 5px;
+    /* transform: rotate(-5deg); */
+    background-color: rgb(2,43,58);
+}
+
 .gray {
     fill: rgb(150, 145, 143);
 }
