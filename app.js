@@ -97,47 +97,21 @@ newArray.onclick = function() {
     displayArray(arr);
 }
 
-//Event handlers for algorithm buttons
-bubbleSortButton.onclick = function() {
-    selectedAlgo = bubbleSort;
-    unselectPrev(bubbleSortButton);
-    sort.style.visibility = "visible";
-}
+//Event listeners for algorithm buttons
+bubbleSortButton.addEventListener("click", algoButtonOnClick(bubbleSortButton, bubbleSort));
+heapSortButton.addEventListener("click", algoButtonOnClick(heapSortButton, heapSort));
+insertionSortButton.addEventListener("click", algoButtonOnClick(insertionSortButton, insertionSort));
+mergeSortButton.addEventListener("click", algoButtonOnClick(mergeSortButton, mergeSortInit));
+quickSortHButton.addEventListener("click", algoButtonOnClick(quickSortHButton, quickSortH));
+quickSortLButton.addEventListener("click", algoButtonOnClick(quickSortLButton, quickSortL));
+selectionSortButton.addEventListener("click", algoButtonOnClick(selectionSortButton, selectionSort));
 
-heapSortButton.onclick = function() {
-    selectedAlgo = heapSort;
-    unselectPrev(heapSortButton);
-    sort.style.visibility = "visible";
-}
-
-insertionSortButton.onclick = function() {
-    selectedAlgo = insertionSort;
-    unselectPrev(insertionSortButton);
-    sort.style.visibility = "visible";
-}
-
-mergeSortButton.onclick = function() {
-    selectedAlgo = mergeSortInit;
-    unselectPrev(mergeSortButton);
-    sort.style.visibility = "visible";
-}
-
-quickSortHButton.onclick = function() {
-    selectedAlgo = quickSortH;
-    unselectPrev(quickSortHButton);
-    sort.style.visibility = "visible";
-}
-
-quickSortLButton.onclick = function() {
-    selectedAlgo = quickSortL;
-    unselectPrev(quickSortLButton);
-    sort.style.visibility = "visible";
-}
-
-selectionSortButton.onclick = function() {
-    selectedAlgo = selectionSort;
-    unselectPrev(selectionSortButton);
-    sort.style.visibility = "visible";
+function algoButtonOnClick(button, algorithm) {
+    return function() {
+        selectedAlgo = algorithm;
+        unselectPrev(button);
+        sort.style.visibility = "visible";
+    }
 }
 
 //Event handler for sort button
